@@ -40,12 +40,12 @@ RUN \
  mkdir -p \
 	/var/www/html/ && \
  if [ -z ${SNIPEIT_RELEASE+x} ]; then \
-	SNIPEIT_RELEASE=$(curl -sX GET "https://api.github.com/repos/snipe/snipe-it/releases/latest" \
+	SNIPEIT_RELEASE=$(curl -sX GET "https://api.github.com/repos/beveradb/snipe-it/releases/latest" \
 	| awk '/tag_name/{print $4;exit}' FS='[""]'); \
  fi && \
  curl -o \
  /tmp/snipeit.tar.gz -L \
-	"https://github.com/snipe/snipe-it/archive/${SNIPEIT_RELEASE}.tar.gz" && \
+	"https://github.com/beveradb/snipe-it/archive/${SNIPEIT_RELEASE}.tar.gz" && \
  tar xf \
  /tmp/snipeit.tar.gz -C \
 	/var/www/html/ --strip-components=1 && \
